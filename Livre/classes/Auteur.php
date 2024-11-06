@@ -26,5 +26,13 @@
             return  $this;
         }
 
+        public function getInfos() {
+
+        }
+
+        public function __toString() {
+            return "Livres de ".$this->prenom.$this->nom;
+        }
+
     }
 ?>

@@ -14,7 +14,10 @@
         require 'classes/'.$class_name.'.php';
     });
 
-    
+    $sKing = new Auteur("King", "Stephan");
+    $book = new Livre("Ca", "Stephen King", "1138", "1986", "20");
+
+    echo $sKing;
 
     ?>
 </body>

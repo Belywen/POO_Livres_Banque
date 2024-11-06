@@ -17,7 +17,14 @@
     });
 
     $elanFormation = new Entreprise("ELAN FORMATION", "1993-01-01", "14 rue du Rhône", "67100", "STRASBOURG");
-    echo $elanFormation->getRaisonSociale();
+    // var_dump($elanFormation);
+    // echo $elanFormation->getRaisonSociale()."a été crée le ".$elanFormation->getDateCreation()->format("d-M-Y");
+    echo $elanFormation."</br>";
+    echo $elanFormation->getInfos()."</br>";
+
+    $stephane = new Employe("SMAIL", "Stéphane", "stephane@elan-formation.fr")."</br>";
+    echo $stephane;
+    
     ?>
 </body>
 </html>

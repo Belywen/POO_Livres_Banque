@@ -1,18 +1,19 @@
 <?php
-class Livres {
+class Livre {
     private string $titre;
-    private string $auteur;
+    private Auteur $auteur;
     private int $nbPages;
     private int $anneeParution;
-    private float $prix;    
+    private float $prix;     
 
-    public function __construct(string $titre, string $auteur, 
-                int $nbPages, int $anneeParution, float $prix) {
+    public function __construct(string $titre, Auteur $auteur, int $nbPages, 
+                    int $anneeParution, float $prix) {
         $this->titre = $titre;
         $this->auteur = $auteur;
         $this->nbPages = $nbPages;
         $this->anneeParution = $anneeParution;
         $this->prix = $prix;
+        $this->auteur->addLivre($this);
     }
 
     public function getTitre(): string {
@@ -22,6 +23,15 @@ class Livres {
     public function setTitre(string $titre)  {
         $this->titre = $titre;
         return  $this;
+    } 
+
+    public function getAuteur()    {
+        return $this->auteur;
+    }
+
+    public function setAuteur($auteur)    {
+        $this->auteur = $auteur;
+        return $this;
     }
 
     public function getNbPages(): int {
@@ -52,9 +62,14 @@ class Livres {
     }
 
     public function __toString() {
-        return $this->titre." ( ".$this->AnneeParution." ) : ".
-        $this->nbPages." pages / ".$this->prix." €.";
+        return $this->titre;
     }
+
+    public function getInfos() {
+        return $this->titre." (".$this->anneeParution.") : ".$this->nbPages. " pages / ".$this->prix." €";
+    }
+
+    
 }
 
 ?>

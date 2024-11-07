@@ -40,11 +40,11 @@ class Employe {
         return $this;
     }
 
-    public function getContrats(): array {
+    public function getcontrat(): array {
         return $this->contrats;
     }   
     
-    public function setContrats(array $contrats) {
+    public function setContrat(array $contrats) {
         $this->contrats = $contrats;
         return $this;
     } 

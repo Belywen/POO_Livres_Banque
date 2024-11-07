@@ -15,20 +15,18 @@
 
     $elanFormation = new Entreprise("ELAN FORMATION", "1993-01-01", "14 rue du Rhône", "67100", "STRASBOURG");
     $tf1 = new Entreprise("TF1", "1970-01-01", "13 rue de la Seine", "75000", "PARIS");
-    $stephane = new Employe("SMAIL", "Stéphane", "stephane@elan-formation.fr", $elanFormation)."</br>";
+    $franceTravail = new Entreprise("FRANCE TRAVAIL", "1990-01-01", "13 rue du travail", "67100", "STRASBOURG");
+
+    $stephane = new Employe("SMAIL", "Stéphane", "stephane@elan-formation.fr");
+    $mickael = new Employe("MURMANN", "Mickael", "mickael@elan-formation.fr");
+
+    $c1 = new Contrat($elanFormation, $stephane, "2020-01-01");
+    $c2 =new Contrat($elanFormation, $mickael, "2010-01-01");
+    $c3 =new Contrat($tf1, $stephane, "2023-01-01");
+    $c4 =new Contrat($franceTravail, $stephane, "2024-01-01");
     
 
-    // echo $elanFormation->getRaisonSociale()."a été crée le ".$elanFormation->getDateCreation()->format("d-M-Y");
-    // echo $elanFormation."</br>";
-    echo $elanFormation->getInfos()."</br>";
-
-    echo $stephane->getInfos();
-    $stephane->setEntreprise($tf1);
-    // echo $stephane->getInfos();
-    echo $stephane;
-
-    // var_dump($elanFormation):
-    
+    echo $elanFormation->afficherEmployes();
     ?>
 </body>
 </html>

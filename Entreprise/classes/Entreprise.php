@@ -6,7 +6,7 @@
         private string $adresse;
         private string $cp;
         private string $ville;
-        private array $employes;
+        private array $contrats;
 
         public function __construct(string $raisonSociale, string $dateCreation, string $adresse, 
             string $cp, string $ville) {
@@ -15,7 +15,7 @@
                 $this->adresse = $adresse;
                 $this->cp = $cp;
                 $this->ville = $ville;
-                $this->employes = [];
+                $this->contrats = [];
             }
 
         public function getRaisonSociale(): string {
@@ -72,21 +72,29 @@
             "et se situe à l'adresse suivante ".$this->getAdresseComplete();
         }     
         
-        public function getEmployes(): array {
-            return $this->employes;
-        }
-
-        public function setEmployes(array $employes) {
-            $this->employes = $employes;
+        public function getcontrats(): array {
+            return $this->contrats;
+        }   
+        
+        public function setcontrats(array $contrats) {
+            $this->contrats = $contrats;
         return $this;
+        }      
+
+        public function addContrat(Contrat $contrat) {
+            $this->contrats[] = $contrat;
         }
 
-        public function addEmploye(Employe $employe) {
-            $this->employes[] = $employe;
+        public function afficherEmployes() {
+            $result = "<h2>Employés de $this</h2>";
+
+            foreach($this->contrats as $contrat) {
+                $result .= $contrat->getEmploye()." (".$contrat->getDateEmbauche(). ")</br>";
+            }
+            return $result;
         }
 
         public function __toString() {
             return $this->raisonSociale;
-            // return $this->raisonSociale." (".$this->dateCreation->format('Y').")";
-        }  
+        } 
     }

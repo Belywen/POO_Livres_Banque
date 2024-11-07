@@ -9,8 +9,7 @@ class Employe {
     public function __construct(string $nom, string $prenom, string $email) {
         $this->nom = $nom;
         $this->prenom = $prenom;
-        $this->email = $email;    
-        
+        $this->email = $email;            
         $this->contrats = [];    
     }
 
@@ -41,11 +40,11 @@ class Employe {
         return $this;
     }
 
-    public function getcontrats(): array {
+    public function getContrats(): array {
         return $this->contrats;
     }   
     
-    public function setcontrats(array $contrats) {
+    public function setContrats(array $contrats) {
         $this->contrats = $contrats;
         return $this;
     } 
@@ -58,7 +57,7 @@ class Employe {
         $result = "<h2>Entreprises de $this</h2>";
 
         foreach($this->contrats as $contrat) {
-            $result .= $contrat->getEntreprise()." (".$contrat->getDateEmbauche(). ")</br>";
+            $result .= $contrat->getEntreprise()." (".$contrat->getDateEmbauche(). " en ".$contrat->getTypeContrat().")</br>";
         }
         return $result;
     }

@@ -20,10 +20,10 @@
     $stephane = new Employe("SMAIL", "Stéphane", "stephane@elan-formation.fr");
     $mickael = new Employe("MURMANN", "Mickael", "mickael@elan-formation.fr");
 
-    $c1 = new Contrat($elanFormation, $stephane, "2020-01-01");
-    $c2 =new Contrat($elanFormation, $mickael, "2010-01-01");
-    $c3 =new Contrat($tf1, $stephane, "2023-01-01");
-    $c4 =new Contrat($franceTravail, $stephane, "2024-01-01");
+    $c1 = new Contrat($elanFormation, $stephane, "2020-01-01", "CDI");
+    $c2 =new Contrat($elanFormation, $mickael, "2010-01-01", "Interim");
+    $c3 =new Contrat($tf1, $stephane, "2023-01-01", "CDD");
+    $c4 =new Contrat($franceTravail, $stephane, "2024-01-01", "Interim");
     
 
     echo $elanFormation->afficherEmployes();

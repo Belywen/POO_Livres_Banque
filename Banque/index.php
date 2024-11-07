@@ -10,6 +10,12 @@
 
     <?php
 
+        $bob = new Titulaire("Bob", "Sinclar", "1980-01-01", "Paris");
+        $alice = new Titulaire("Alice", "Nevers", "1977-01-01", "Saint Malo");
+
+
+        //a finir
+        $courant = new Compte("Compte courant", 10000, );
     ?>
 </body>
 </html>

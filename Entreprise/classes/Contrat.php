@@ -23,13 +23,11 @@
         public function setEntreprise($entreprise) {
             $this->entreprise = $entreprise;
             return $this;
-        }
-        
+        }        
 
         public function getEmploye() {
             return $this->employe;
         }
-
         
         public function setEmploye($employe) {
             $this->employe = $employe;

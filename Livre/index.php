@@ -22,7 +22,6 @@
     $bookShinning = new Livre("Shinning", $sKing, "1977", "447", "16");
 
     echo $sKing->afficherBibliotheque();
-    // echo $sKing;
 
     ?>
 </body>

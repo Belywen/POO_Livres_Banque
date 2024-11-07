@@ -18,6 +18,7 @@
     $book = new Livre("Ca", "Stephen King", "1138", "1986", "20");
 
     echo $sKing;
+    echo $book;
 
     ?>
 </body>

@@ -6,7 +6,8 @@ class Livres {
     private int $anneeParution;
     private float $prix;    
 
-    public function __construct($titre) {
+    public function __construct(string $titre, string $auteur, 
+                int $nbPages, int $anneeParution, float $prix) {
         $this->titre = $titre;
         $this->auteur = $auteur;
         $this->nbPages = $nbPages;
@@ -14,40 +15,45 @@ class Livres {
         $this->prix = $prix;
     }
 
-    public function getTitre() {
+    public function getTitre(): string {
         return  $this->titre;
     }
 
-    public function setTitre($titre) {
+    public function setTitre(string $titre)  {
         $this->titre = $titre;
         return  $this;
     }
 
-    public function getNbPages() {
+    public function getNbPages(): int {
         return  $this->titre;
     }
 
-    public function setNbPages($nbPages) {
+    public function setNbPages(int $nbPages)  {
         $this->nbPages = $nbPages;
         return  $this;
     }
 
-    public function getAnneeParution() {
+    public function getAnneeParution(): int {
         return  $this->anneeParution;
     }
 
-    public function setAnneeParution($anneeParution) {
+    public function setAnneeParution(int $anneeParution) {
         $this->anneeParution = $anneeParution;
         return  $this;
     }
 
-    public function getPrix() {
+    public function getPrix(): float {
         return  $this->prix;
     }
 
-    public function setPrix($prix) {
+    public function setPrix(float $prix) {
         $this->prix = $prix;
         return  $this;
+    }
+
+    public function __toString() {
+        return $this->titre." ( ".$this->AnneeParution." ) : ".
+        $this->nbPages." pages / ".$this->prix." €.";
     }
 }
 

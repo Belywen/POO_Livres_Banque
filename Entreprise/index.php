@@ -14,13 +14,20 @@
     });
 
     $elanFormation = new Entreprise("ELAN FORMATION", "1993-01-01", "14 rue du Rhône", "67100", "STRASBOURG");
-    // var_dump($elanFormation);
-    echo $elanFormation->getRaisonSociale()."a été crée le ".$elanFormation->getDateCreation()->format("d-M-Y");
-    echo $elanFormation."</br>";
+    $tf1 = new Entreprise("TF1", "1970-01-01", "13 rue de la Seine", "75000", "PARIS");
+    $stephane = new Employe("SMAIL", "Stéphane", "stephane@elan-formation.fr", $elanFormation)."</br>";
+    
+
+    // echo $elanFormation->getRaisonSociale()."a été crée le ".$elanFormation->getDateCreation()->format("d-M-Y");
+    // echo $elanFormation."</br>";
     echo $elanFormation->getInfos()."</br>";
 
-    $stephane = new Employe("SMAIL", "Stéphane", "stephane@elan-formation.fr")."</br>";
+    echo $stephane->getInfos();
+    $stephane->setEntreprise($tf1);
+    // echo $stephane->getInfos();
     echo $stephane;
+
+    // var_dump($elanFormation):
     
     ?>
 </body>

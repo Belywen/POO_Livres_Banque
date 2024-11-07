@@ -6,6 +6,7 @@
         private string $adresse;
         private string $cp;
         private string $ville;
+        private array $employes;
 
         public function __construct(string $raisonSociale, string $dateCreation, string $adresse, 
             string $cp, string $ville) {
@@ -14,6 +15,7 @@
                 $this->adresse = $adresse;
                 $this->cp = $cp;
                 $this->ville = $ville;
+                $this->employes = [];
             }
 
         public function getRaisonSociale(): string {
@@ -68,11 +70,23 @@
         public function getInfos() {
             return $this->getRaisonSociale()." a été crée le ".$this->getDateCreation()->format("d-m-Y").
             "et se situe à l'adresse suivante ".$this->getAdresseComplete();
-        }
+        }     
         
-        public function __toString() {
-            // return $this->raisonSociale." (".$this->dateCreation->format('Y').")";
-            return $this->raisonSociale." (".$this->dateCreation->format('Y').")";
+        public function getEmployes(): array {
+            return $this->employes;
         }
-       
+
+        public function setEmployes(array $employes) {
+            $this->employes = $employes;
+        return $this;
+        }
+
+        public function addEmploye(Employe $employe) {
+            $this->employes[] = $employe;
+        }
+
+        public function __toString() {
+            return $this->raisonSociale;
+            // return $this->raisonSociale." (".$this->dateCreation->format('Y').")";
+        }  
     }

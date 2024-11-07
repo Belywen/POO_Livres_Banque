@@ -9,9 +9,6 @@
     <h1>POO Entreprise</h1>
     <?php
 
-    // require "Entreprise.php";
-    // require "Employe.php";
-
     spl_autoload_register(function ($class_name) {
         require 'classes/'.$class_name.'.php';
     });
@@ -20,10 +17,10 @@
     // var_dump($elanFormation);
     // echo $elanFormation->getRaisonSociale()."a été crée le ".$elanFormation->getDateCreation()->format("d-M-Y");
     echo $elanFormation."</br>";
-    echo $elanFormation->getInfos()."</br>";
+    // echo $elanFormation->getInfos()."</br>";
 
-    $stephane = new Employe("SMAIL", "Stéphane", "stephane@elan-formation.fr")."</br>";
-    echo $stephane;
+    // $stephane = new Employe("SMAIL", "Stéphane", "stephane@elan-formation.fr")."</br>";
+    // echo $stephane;
     
     ?>
 </body>

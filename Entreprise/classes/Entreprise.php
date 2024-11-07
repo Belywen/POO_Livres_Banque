@@ -10,7 +10,7 @@
         public function __construct(string $raisonSociale, string $dateCreation, string $adresse, 
             string $cp, string $ville) {
                 $this->raisonSociale = $raisonSociale;
-                $this->dateCreation = new DateTime($dateCreation);
+                $this->dateCreation = new DateTime($dateCreation); 
                 $this->adresse = $adresse;
                 $this->cp = $cp;
                 $this->ville = $ville;

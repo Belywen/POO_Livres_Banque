@@ -47,13 +47,22 @@ class Employe {
     
     public function setcontrats(array $contrats) {
         $this->contrats = $contrats;
-    return $this;
+        return $this;
     } 
 
     public function addContrat(Contrat $contrat) {
         $this->contrats[] = $contrat;
     }
-       
+    
+    public function afficherEntreprises() {
+        $result = "<h2>Entreprises de $this</h2>";
+
+        foreach($this->contrats as $contrat) {
+            $result .= $contrat->getEntreprise()." (".$contrat->getDateEmbauche(). ")</br>";
+        }
+        return $result;
+    }
+
     public function __toString() {
         return $this->prenom." ".$this->nom;
     }

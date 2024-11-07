@@ -29,6 +29,9 @@
     echo $elanFormation->afficherEmployes();
     echo $tf1->afficherEmployes();
     echo $franceTravail->afficherEmployes();
+
+    echo $stephane->afficherEntreprises();
+    echo $mickael->afficherEntreprises();
     ?>
 </body>
 </html>

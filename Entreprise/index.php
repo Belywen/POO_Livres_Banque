@@ -27,6 +27,8 @@
     
 
     echo $elanFormation->afficherEmployes();
+    echo $tf1->afficherEmployes();
+    echo $franceTravail->afficherEmployes();
     ?>
 </body>
 </html>

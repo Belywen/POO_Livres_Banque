@@ -36,29 +36,35 @@
         return $this;
         }
 
-         public function getAdresse(): string {
+         public function getAdresse(): string 
+         {
                 return $this->adresse;
         }
     
-        public function setAdresse(string $adresse) {
+        public function setAdresse(string $adresse) 
+        {
             $this->adresse = $adresse;
         return $this;
         }
 
-        public function getCp(): string {
+        public function getCp(): string 
+        {
                 return $this->cp;
         }
     
-        public function setCp(string $cp) {
+        public function setCp(string $cp) 
+        {
             $this->cp = $cp;
         return $this;
         }
 
-        public function getVille(): string {
+        public function getVille(): string 
+        {
                 return $this->ville;
         }
     
-        public function setVille(string $ville) {
+        public function setVille(string $ville) 
+        {
             $this->ville = $ville;
         return $this;
         }

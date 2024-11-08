@@ -11,39 +11,45 @@
             $this->livres = [];
         }
 
-        public function getNom(): string {
+        public function getNom(): string 
+        {
             return  $this->nom;
         }
 
-        public function setNom(string $nom) {
+        public function setNom(string $nom) 
+        {
             $this->nom = $nom;
             return  $this;
         }
 
-        public function getPrenom(): string {
+        public function getPrenom(): string 
+        {
             return  $this->prenom;
         }
 
-        public function setPrenom(string $prenom) {
+        public function setPrenom(string $prenom) 
+        {
             $this->prenom = $prenom;
             return  $this;
         }
 
-        public function addLivre(Livre $livre) {
+        public function addLivre(Livre $livre) 
+        {
             $this->livres[] = $livre;
         }
 
-        public function afficherBibliotheque() {
+        public function afficherBibliotheque() 
+        {
             $result = "<h2>Livre de $this</h2>";
     
             foreach($this->livres as $livre) {
-                $result .= $livre->getInfos()."<br>";// ." ( ".$this->AnneeParution." ) : ".
-                // $this->nbPages." pages / ".$this->prix." €.</br>";
+                $result .= $livre->getInfos()."<br>";
             }
             return $result;
         }
 
-        public function __toString() {
+        public function __toString() 
+        {
             return $this->prenom." ".$this->nom;
         }
 

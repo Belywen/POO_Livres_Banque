@@ -16,30 +16,32 @@
             $this->employe->addContrat($this);
         }
 
-        public function getEntreprise() {
+        public function getEntreprise() : string 
+        {
             return $this->entreprise;
         }
 
-        public function setEntreprise($entreprise) {
+        public function setEntreprise(string $entreprise) {
             $this->entreprise = $entreprise;
             return $this;
         }        
 
-        public function getEmploye() {
+        public function getEmploye() : string
+        {
             return $this->employe;
         }
         
-        public function setEmploye($employe) {
+        public function setEmploye(string $employe) {
             $this->employe = $employe;
             return $this;
         }
 
-        public function getDateEmbauche()
+        public function getDateEmbauche() : DateTime
         {
            return $this->dateEmbauche->format("d-m-Y");
         }
             
-        public function setDateEmbauche($dateEmbauche)
+        public function setDateEmbauche(DateTime $dateEmbauche)
         {
             $this->dateEmbauche = $dateEmbauche;
             return $this;
@@ -49,7 +51,7 @@
             return $this->typeContrat;
         }
         
-        public function setTypeContrat($typeContrat){
+        public function setTypeContrat(string $typeContrat){
             $this->typeContrat = $typeContrat;
             return $this;
         }

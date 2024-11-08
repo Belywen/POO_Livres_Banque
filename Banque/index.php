@@ -19,12 +19,21 @@
         
         $courantFr = new Compte($bob, "Compte courant", 10, "€");
         $pelFr = new Compte($bob, "Plan Epargne Logement", 5000, "€");
-        $pelFr = new Compte($alice, "Plan Epargne Logement", 500, "$");
+        $pelEn = new Compte($alice, "Plan Epargne Logement", 500, "£");
 
-       
-        echo $bob->getInfos();
-        echo $courantFr->getInfos();
-        // echo $bob->afficherCompte();
+        //Infos titulaires + age + comptes :
+        echo $bob->afficherInfosTitulaire();
+        echo $alice->afficherInfosTitulaire();
+        
+        echo "</br>---</br>";
+
+        //Infos completes comptes + titulaire:
+        echo $courantFr->afficherInfosCompte();
+        echo $pelFr->afficherInfosCompte();
+        echo $pelEn->afficherInfosCompte();
+
+        
+        // echo $courantFr->getInfos();
     ?>
 </body>
 </html>

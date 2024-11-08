@@ -14,79 +14,77 @@
             $this->comptes = [];
         }
 
-        public function getNom()
+        public function getNom() : string 
         {
                 return $this->nom;
         }
 
-        public function setNom($nom)
+        public function setNom(string $nom)
         {
                 $this->nom = $nom;
                 return $this;
         }
  
-        public function getPrenom()
+        public function getPrenom() : string
         {
                 return $this->prenom;
         }
  
-        public function setPrenom($prenom)
+        public function setPrenom(string $prenom)
         {
                 $this->prenom = $prenom;
                 return $this;
         }
 
-        public function getDateNaissance()
+        public function getDateNaissance() : DateTime
         {
                 return $this->dateNaissance;
         }
 
-        public function setDateNaissance($dateNaissance)
+        public function setDateNaissance(DateTime $dateNaissance)
         {
                 $this->dateNaissance = $dateNaissance;
                 return $this;
         }
 
-        public function getVille()
+        public function getVille() : string
         {
                 return $this->ville;
         }
 
-        public function setVille($ville)
+        public function setVille(string $ville)
         {
                 $this->ville = $ville;
                 return $this;
         }
 
         public function addCompte(Compte $compte) {
-            $this->comptes [] = $compte;
+                $this->comptes [] = $compte;
         }
 
-        public function afficherCompte() {
-                $result = "<h2>Comptes</h2>";
-
-                foreach ($this->comptes as $compte) {
-                        $result .= $compte->getInfos()."</br>";
-                }
+        public function afficherInfosTitulaire() {
+                $result = "<h2>Comptes de ".$this." (".$this->age()." ans)</h2>";
+                $result .= $this->getInfos();
                 return $result;
         }
 
         public function age() {
-            $today = new DateTime();
-            $calculAge = $this->dateNaissance->diff($today);
-
-            return $calculAge->y;
+                $today = new DateTime();
+                $calculAge = $this->dateNaissance->diff($today);
+                
+                return $calculAge->y;
         }
 
         public function getInfos() {
-            //affichage nom prenom age comptes?
-            $result = "Titulaire : ".$this." (".$this->age()." ans)</br>";
-            $result .= $this->afficherCompte();
-            return $result;
+                $result = "";
+                foreach ($this->comptes as $compte) {
+                        $result .= $compte->getLibelle()."</br>";
+                }
+                return $result;
         }
 
         public function __toString() {
-            return $this->nom." ".$this->prenom;
+                return $this->nom." ".$this->prenom;
         }
     }
 ?>

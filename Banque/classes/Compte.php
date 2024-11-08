@@ -13,49 +13,58 @@
         $this->titulaire->addCompte($this);
     }
         
-    public function getLibelle()
+    public function getLibelle() : string
     {
             return $this->libelle;
     }
 
-    public function setLibelle($libelle)
+    public function setLibelle(string $libelle)
     {
             $this->libelle = $libelle;
             return $this;
     }
 
-    public function getSoldeInitial()
+    public function getSoldeInitial() : float
     {
             return $this->soldeInitial;
     }
 
-    public function setSoldeInitial($soldeInitial)
+    public function setSoldeInitial(float $soldeInitial)
     {
             $this->soldeInitial = $soldeInitial;
             return $this;
     }
 
-    public function getDevise()
+    public function getDevise() : string
     {
             return $this->devise;
     }
     
-    public function setDevise($devise)
+    public function setDevise(string $devise)
     {
             $this->devise = $devise;
             return $this;
     }
 
-    public function getInfos() {
-       $result = "Informations du ".$this. " de ".$this->titulaire. " : </br>";
-       $result .= "Solde initial : ".$this->soldeInitial.$this->devise."</br>";
-       return $result;
-    }
+    public function getInfos() {      
+        $result = "Solde initial : ".$this->soldeInitial.$this->devise."</br>";
+
+        return $result;
+     }
+
+     public function afficherInfosCompte()
+     {
+        $result = "Type : ".$this."</br>";
+        $result .= "Titulaire : ".$this->titulaire->getNom()." ".$this->titulaire->getPrenom()."</br>";
+        $result .= $this->getInfos();
+        $result .= "</br>";
+
+        return $result;
+     }
 
     public function __toString() {
         return $this->libelle;
     }
-
 }
 
 ?>

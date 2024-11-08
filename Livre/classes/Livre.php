@@ -29,7 +29,7 @@ class Livre {
         return $this->auteur;
     }
 
-    public function setAuteur($auteur)    {
+    public function setAuteur(string $auteur)    {
         $this->auteur = $auteur;
         return $this;
     }
@@ -67,9 +67,7 @@ class Livre {
 
     public function getInfos() {
         return $this->titre." (".$this->anneeParution.") : ".$this->nbPages. " pages / ".$this->prix." €";
-    }
-
-    
+    }    
 }
 
 ?>

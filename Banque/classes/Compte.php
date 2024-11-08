@@ -46,7 +46,7 @@
     }
 
     public function getInfos() {
-        //affichage datas comptes nom prenom
+       return "Titulaire : ".$this->getNom." ".$this->getPrenom."</br>";
     }
 
     public function __toString() {

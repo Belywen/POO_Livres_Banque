@@ -64,15 +64,29 @@
 
         public function age() {
             //calcul de l'age
+            $today = new DateTime();
+            $calculAge = $this->diff($today);
+
+            return $calculAge;
         }
 
         public function getInfos() {
-            //affichage nom prenom age comptes
-            // return $this." ".
+            //affichage nom prenom age comptes?
+            return "Titulaire : ".$this." (".$dateNaissance." ans)";
         }
 
         public function __toString() {
-            $this->nom." ".$this->prenom;
+            return $this->nom." ".$this->prenom;
         }
     }
 ?>
+
+
+
+
+
+
+
+
+
+

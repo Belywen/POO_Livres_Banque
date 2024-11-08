@@ -38,22 +38,17 @@
     echo "</br>---</br>";
 
     echo "Opérations sur compte courant </br>";
-    echo $courantFr->getInfos();
+    echo "Avant crédit de 200 : " . $courantFr->getInfos();
     $courantFr->credit(200);
-    echo $courantFr->getInfos();
-    // $courantFr->debit(3000);
-    // echo $courantFr->getInfos();
-    //Voir pour virement
+    echo "Avant débit de 3000 : " . $courantFr->getInfos();
+    $courantFr->debit(3000);
 
-    echo "</br> Opérations sur pelEsn </br>";
-    echo $pelEn->getInfos();
-    $pelEn->credit(200);
-    echo $pelEn->getInfos();
-    // $pelEn->debit(3000);
-    // echo $pelEn->getInfos();
-
-
-
+    echo "Opérations de virement </br>";
+    echo "Avant virement de 2790 : " . $courantFr->getInfos();
+    $pelFr->virement($courantFr, 2790);
+    echo "Après virement: </br>";
+    echo "Sur courant : " . $courantFr->getInfos();
+    echo "Sur PEL : " . $pelFr->getInfos();
 
 
 

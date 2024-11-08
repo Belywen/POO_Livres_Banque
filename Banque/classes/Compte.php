@@ -9,7 +9,7 @@ class Compte
         private float $debit;
         private float $virement;
 
-        public function __construct(Titulaire $titulaire, string $libelle, float $soldeInitial, string $devise)
+        public function __construct(Titulaire $titulaire, string $libelle, float $soldeInitial, string $devise, float $credit, float $debit, float $virement)
         {
                 $this->titulaire = $titulaire;
                 $this->libelle = $libelle;
@@ -76,6 +76,17 @@ class Compte
                 return $this;
         }
 
+        public function getVirement(): float
+        {
+                return $this->virement;
+        }
+
+        public function setVirement(float $virement)
+        {
+                $this->virement = $virement;
+                return $this;
+        }
+
         public function getInfos(): string
         {
                 $result = "Solde initial : " . $this->soldeInitial . $this->devise . "</br>";
@@ -93,7 +104,22 @@ class Compte
                 return $result;
         }
 
-        public function credit(): float {}
+        public function credit(): float
+        { // Possibilité de mettre un if pour éviter erreur mais retournera string
+                $montant = 0;
+                return $this->soldeInitial += $montant;
+        }
+
+        // public function debit(): float
+        // { // Possibilité de mettre un if pour éviter erreur mais retournera string
+        //         $montant = 0;
+        //         return $this->soldeInitial -= $montant;
+        // }
+
+        // public function virement(): string
+        // {
+        //         return "en attente";
+        // }
 
 
         public function __toString()

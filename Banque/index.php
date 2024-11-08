@@ -16,18 +16,15 @@
 
         $bob = new Titulaire("Bob", "Sinclar", "1980-01-01", "Paris");
         $alice = new Titulaire("Alice", "Nevers", "1977-01-01", "Saint Malo");
-
-        echo($bob);
-
-
         
         $courantFr = new Compte($bob, "Compte courant", 10, "€");
         $pelFr = new Compte($bob, "Plan Epargne Logement", 5000, "€");
-        $courantEn = new Compte($alice, "Compte courant", 10000, "£");
         $pelFr = new Compte($alice, "Plan Epargne Logement", 500, "$");
 
        
         echo $bob->getInfos();
+        echo $courantFr->getInfos();
+        // echo $bob->afficherCompte();
     ?>
 </body>
 </html>

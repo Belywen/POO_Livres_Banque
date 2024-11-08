@@ -5,7 +5,8 @@
         private float $soldeInitial;
         private string $devise;
 
-    public function __construc(Titulaire $titulaire, string $libelle, float $soldeInitial, string $devise) {
+    public function __construct(Titulaire $titulaire, string $libelle, float $soldeInitial, string $devise) {
+        $this->titulaire = $titulaire;
         $this->libelle = $libelle;
         $this->soldeInitial = $soldeInitial;
         $this->devise = $devise;   
@@ -46,14 +47,15 @@
     }
 
     public function getInfos() {
-       return "Titulaire : ".$this->getNom." ".$this->getPrenom."</br>";
+       $result = "Informations du ".$this. " de ".$this->titulaire. " : </br>";
+       $result .= "Solde initial : ".$this->soldeInitial.$this->devise."</br>";
+       return $result;
     }
 
     public function __toString() {
         return $this->libelle;
     }
 
-
-    }
+}
 
 ?>

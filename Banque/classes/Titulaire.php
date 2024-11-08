@@ -62,17 +62,27 @@
             $this->comptes [] = $compte;
         }
 
-        public function age() {
-            //calcul de l'age
-            $today = new DateTime();
-            $calculAge = $this->diff($today);
+        public function afficherCompte() {
+                $result = "<h2>Comptes</h2>";
 
-            return $calculAge;
+                foreach ($this->comptes as $compte) {
+                        $result .= $compte->getInfos()."</br>";
+                }
+                return $result;
+        }
+
+        public function age() {
+            $today = new DateTime();
+            $calculAge = $this->dateNaissance->diff($today);
+
+            return $calculAge->y;
         }
 
         public function getInfos() {
             //affichage nom prenom age comptes?
-            return "Titulaire : ".$this." (".$dateNaissance." ans)";
+            $result = "Titulaire : ".$this." (".$this->age()." ans)</br>";
+            $result .= $this->afficherCompte();
+            return $result;
         }
 
         public function __toString() {

@@ -58,24 +58,28 @@
                 return $this;
         }
 
-        public function addCompte(Compte $compte) {
+        public function addCompte(Compte $compte) 
+        {
                 $this->comptes [] = $compte;
         }
 
-        public function afficherInfosTitulaire() {
+        public function afficherInfosTitulaire() : string 
+        {
                 $result = "<h2>Comptes de ".$this." (".$this->age()." ans)</h2>";
                 $result .= $this->getInfos();
                 return $result;
         }
 
-        public function age() {
+        public function age() : int 
+        {
                 $today = new DateTime();
                 $calculAge = $this->dateNaissance->diff($today);
                 
                 return $calculAge->y;
         }
 
-        public function getInfos() {
+        public function getInfos() : string
+        {
                 $result = "";
                 foreach ($this->comptes as $compte) {
                         $result .= $compte->getLibelle()."</br>";
@@ -83,7 +87,8 @@
                 return $result;
         }
 
-        public function __toString() {
+        public function __toString() : string 
+        {
                 return $this->nom." ".$this->prenom;
         }
     }

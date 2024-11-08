@@ -21,6 +21,7 @@
         $pelFr = new Compte($bob, "Plan Epargne Logement", 5000, "€");
         $pelEn = new Compte($alice, "Plan Epargne Logement", 500, "£");
 
+              
         //Infos titulaires + age + comptes :
         echo $bob->afficherInfosTitulaire();
         echo $alice->afficherInfosTitulaire();
@@ -32,8 +33,28 @@
         echo $pelFr->afficherInfosCompte();
         echo $pelEn->afficherInfosCompte();
 
+        echo "</br>---</br>";
+
+        echo "Opérations sur compte courant </br>";
+        echo $courantFr->getInfos();
+        $courantFr->crediter(200);
+        echo $courantFr->getInfos();
+        $courantFr->debit(3000);
+        echo $courantFr->getInfos();
+        //Voir pour virement
+
+        echo "Opérations sur pelEn </br>";
+        echo $pelEn->getInfos();
+        $pelEn->crediter(200);
+        echo $pelEn->getInfos();
+        $pelEn->debiter(3000);
+        echo $pelEn->getInfos();
+
         
-        // echo $courantFr->getInfos();
+
+
+
+        
     ?>
 </body>
 </html>

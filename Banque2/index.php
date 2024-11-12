@@ -27,7 +27,9 @@
     echo "</br>---</br>";
     echo "courant : " . $courant->debit(50);
     echo "</br>---</br>";
-    echo "courant vers pel: " . $courant->virement($pel, 350);
+    echo $courant->afficherInfoscomptes();
+    echo $courant->virement($pel, 350);
+    echo "courant vers pel: " . $courant->afficherInfoscomptes();
 
 
     ?>

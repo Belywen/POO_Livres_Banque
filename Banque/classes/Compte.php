@@ -55,7 +55,6 @@ class Compte
         public function getInfos(): string
         {
                 $result = "Solde initial : " . $this->soldeInitial . $this->devise . "</br>";
-
                 return $result;
         }
 

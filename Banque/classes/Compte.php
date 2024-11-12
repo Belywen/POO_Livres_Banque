@@ -5,27 +5,18 @@ class Compte
         private string $libelle;
         private float $soldeInitial;
         private string $devise;
-        private float $credit;
-        private float $debit;
-        private float $virement;
 
         public function __construct(
                 Titulaire $titulaire,
                 string $libelle,
                 float $soldeInitial,
                 string $devise,
-                float $credit,
-                float $debit,
-                float $virement
         ) {
                 $this->titulaire = $titulaire;
                 $this->libelle = $libelle;
                 $this->soldeInitial = $soldeInitial;
                 $this->devise = $devise;
                 $this->titulaire->addCompte($this);
-                $this->credit = $credit;
-                $this->debit = $debit;
-                $this->virement = $virement;
         }
 
         public function getLibelle(): string
@@ -58,39 +49,6 @@ class Compte
         public function setDevise(string $devise)
         {
                 $this->devise = $devise;
-                return $this;
-        }
-
-        public function getCredit(): float
-        {
-                return $this->credit;
-        }
-
-        public function setCredit(float $credit)
-        {
-                $this->credit = $credit;
-                return $this;
-        }
-
-        public function getDebit(): float
-        {
-                return $this->debit;
-        }
-
-        public function setDebit(float $debit)
-        {
-                $this->debit = $debit;
-                return $this;
-        }
-
-        public function getVirement(): float
-        {
-                return $this->virement;
-        }
-
-        public function setVirement(float $virement)
-        {
-                $this->virement = $virement;
                 return $this;
         }
 

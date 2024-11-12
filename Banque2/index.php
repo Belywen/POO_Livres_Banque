@@ -22,6 +22,13 @@
     echo $lily->afficherTitulaireComptes();
     echo "---</br>";
     echo $courant->afficherInfoscomptes();
+    echo "</br>---</br>";
+    echo "courant : " . $courant->credit(50);
+    echo "</br>---</br>";
+    echo "courant : " . $courant->debit(50);
+    echo "</br>---</br>";
+    echo "courant vers pel: " . $courant->virement($pel, 350);
+
 
     ?>
 </body>

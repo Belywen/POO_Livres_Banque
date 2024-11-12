@@ -87,7 +87,6 @@ class Compte
                 $compteDest->credit($montant);
         }
 
-
         public function __toString()
         {
                 return $this->libelle;

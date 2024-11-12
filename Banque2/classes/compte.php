@@ -76,6 +76,24 @@ class Compte
         return $result;
     }
 
+    public function credit(float $montant)
+    {
+        $result = $this->soldeInitial += $montant;
+        return $result;
+    }
+
+    public function debit(float $montant)
+    {
+        $result = $this->soldeInitial -= $montant;
+        return $result;
+    }
+
+    public function virement(Compte $compteDest, float $montant)
+    {
+        $this->debit($montant);
+        $compteDest->credit($montant);
+    }
+
     public function __toString()
     {
         return $this->libelle;

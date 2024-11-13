@@ -16,17 +16,17 @@ class Film
         string $synopsis,
         Realisateur $realisateur,
         Genre $genre,
-      
+
     ) {
         $this->titre = $titre;
         $this->dateSortieFr = new DateTime($dateSortieFr);
         $this->duree = $duree;
         $this->synopsis = $synopsis;
         $this->realisateur = $realisateur;
-        $this->realisateur->addFilm($this); 
+        $this->realisateur->addFilm($this);
         $this->genre = $genre;
-        $this->genre->addFilm($this); 
-        $this->castings = [];       
+        $this->genre->addFilm($this);
+        $this->castings = [];
     }
 
     public function getTitre(): string
@@ -73,26 +73,26 @@ class Film
         return $this;
     }
 
-    public function getRealisateur() : string
+    public function getRealisateur(): string
     {
-            return $this->realisateur;
+        return $this->realisateur;
     }
 
     public function setRealisateur(string $realisateur)
     {
-            $this->realisateur = $realisateur;
-            return $this;
+        $this->realisateur = $realisateur;
+        return $this;
     }
 
-    public function getGenre() : string
+    public function getGenre(): string
     {
-            return $this->genre;
+        return $this->genre;
     }
 
-        public function setGenre(string $genre)
+    public function setGenre(string $genre)
     {
-            $this->genre = $genre;
-            return $this;
+        $this->genre = $genre;
+        return $this;
     }
 
     public function addCasting(Casting $casting)
@@ -100,9 +100,21 @@ class Film
         $this->castings[] = $casting;
     }
 
-    public function getInfosFilms() {
-        $result = $this." (".$this->duree.")
-                 - Sortie en salle le : ".$this->dateSortieFr->format('d-m-Y');
+    public function getInfosFilms()
+    {
+        $result = $this . " (" . $this->duree . ")
+                 - Sortie en salle le : " . $this->dateSortieFr->format('d-m-Y');
+        return $result;
+    }
+
+    public function afficherCasting()
+    {
+        $result = "<h2>Casting du film " . $this . " </h2></br>";
+
+        foreach ($this->castings as $casting) {
+            $result .= $casting->getActeur() . " pour le role de " . $casting->getRole() . "</br>";
+        }
+
         return $result;
     }
 
@@ -110,7 +122,4 @@ class Film
     {
         return $this->titre;
     }
-
-        
-        
 }

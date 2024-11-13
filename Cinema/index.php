@@ -30,7 +30,7 @@
 
     $lDicaprio = new Acteur("Dicaprio", "Leonardo", "M", "1974-11-11");
     $mCotillard = new Acteur("Cotillard", "Marion", "F", "1975-03-30");
-    $cBale= new Acteur("Bale", "Christian", "M", "1974-11-11");
+    $cBale = new Acteur("Bale", "Christian", "M", "1974-11-11");
 
     $domCom = new Role("Dominic Com");
     $malCom = new Role("Mallorie Cobb");
@@ -40,7 +40,7 @@
     que la ville se retrouve menacée par des choix moraux déchirants, Batman doit faire face à son 
     propre sens de la justice. Le film explore les frontières entre le bien et le mal, et la manière 
     dont une ville et un héros peuvent être façonnés par leurs adversaires.", $cNolan, $sF);
-    /*Christian bale > Batman - Heath Ledger > Joker*/    
+    /*Christian bale > Batman - Heath Ledger > Joker*/
 
     $wallStreet = new Film("Le loup de Wall Street", "2013-01-01", 179, "Jordan Belfort, un courtier 
     en bourse ambitieux qui crée une société de courtage à succès, Stratton Oakmont. Conduit par sa 
@@ -60,9 +60,9 @@
      explosive où la trahison et la corruption sont révélées dans un final surprenant.", $mScorcese, $policier);
     /* dicaprio > William « Billy » Costigan - Matt Damon > Colin Sullivan*/
 
-    
 
-    /*Afficher infos : real*/    
+
+    /*Afficher infos : real*/
     echo $cNolan->afficherInfosReal();
 
     /*Afficher films par real + genre*/
@@ -78,15 +78,18 @@
     $casting1 = new casting($lDicaprio, $domCom, $inception);
     $casting2 = new casting($lDicaprio, $jBelfort, $wallStreet);
     $casting3 = new casting($cBale, $domCom, $inception);
-   
-    
+    $casting4 = new casting($mCotillard, $malCom, $inception);
+
+
     /*Filmographie d'un acteur */
     echo $lDicaprio->afficherFilmographie();
 
     /*Afficher les acteurs pour 1 role */
     echo $domCom->afficherActeurPourUnRole();
 
-       
+    /*Afficher le casting d'un film */
+    echo $inception->afficherCasting();
+
 
     ?>
 </body>

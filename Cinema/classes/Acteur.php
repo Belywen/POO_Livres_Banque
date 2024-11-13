@@ -33,6 +33,7 @@ class Acteur extends Personne {
         return $result;
     }
 
+
     public function __toString()
     {
         return parent::__toString();

@@ -30,6 +30,7 @@
 
     $lDicaprio = new Acteur("Dicaprio", "Leonardo", "M", "1974-11-11");
     $mCotillard = new Acteur("Cotillard", "Marion", "F", "1975-03-30");
+    $cBale= new Acteur("Bale", "Christian", "M", "1974-11-11");
 
     $domCom = new Role("Dominic Com");
     $malCom = new Role("Mallorie Cobb");
@@ -76,10 +77,14 @@
     echo "</br>---</br></br>";
     $casting1 = new casting($lDicaprio, $domCom, $inception);
     $casting2 = new casting($lDicaprio, $jBelfort, $wallStreet);
-    // var_dump($casting1);
-
+    $casting3 = new casting($cBale, $domCom, $inception);
+   
+    
     /*Filmographie d'un acteur */
     echo $lDicaprio->afficherFilmographie();
+
+    /*Afficher les acteurs pour 1 role */
+    echo $domCom->afficherActeurPourUnRole();
 
        
 

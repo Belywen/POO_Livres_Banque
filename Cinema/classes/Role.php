@@ -24,6 +24,16 @@ class Role {
         return $this;
     }
 
+    public function afficherActeurPourUnRole() {
+        $result = "<h2>Role de ".$this."</h2></br>";
+
+        foreach($this->castings as $casting) {
+            $result .= $casting->getActeur()." dans ".$casting->getFilm()."</br>";
+        }
+
+        return $result;
+    }
+
     public function __toString()  {
         return $this->perso;
     }

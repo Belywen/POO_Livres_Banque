@@ -27,7 +27,12 @@
     une idée dans l'esprit d'un héritier, une mission complexe appelée 'inception'. 
     Mais plus ils plongent dans les rêves, plus la frontière entre réalité et illusion 
     devient floue, menaçant la survie de l'équipe.", $cNolan, $sF);
-    /*acteurs : dicaprio > dom com - cotillard > Mallorie Cobb*/
+
+    $lDicaprio = new Acteur("Dicaprio", "Leonardo", "M", "1974-11-11");
+    $mCotillard = new Acteur("Cotillard", "Marion", "F", "1975-03-30");
+
+    $domCom = new Role("Dominic Com");
+    $malCom = new Role("Mallorie Cobb");
 
     $theDarkKnight = new Film("The Dark Knight", "2008-01-01", 152, "Batman lutte contre le chaos 
     semé par le Joker, un criminel anarchiste déterminé à plonger Gotham dans le désespoir. Alors 
@@ -66,9 +71,9 @@
     echo "</br>---</br>";
     echo $sF->afficherFilmParGenre();
 
-    echo "</br>---</br>";
-   
-
+    echo "</br>---</br></br>";
+    $casting1 = new casting($lDicaprio, $domCom, $inception);
+    var_dump($casting1);
     
 
     

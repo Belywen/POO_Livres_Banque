@@ -12,5 +12,42 @@ class Casting {
         $this->film = $film;
         $film->addCasting($this);    
     }
+
+    public function getActeur() : string
+    {
+        return $this->acteur;
+    }
+
+    public function setActeur(string $acteur)
+    {
+        $this->acteur = $acteur;
+
+        return $this;
+    }
+
+    public function getRole() : string
+    {
+        return $this->role;
+    }
+
+    
+    public function setRole(string $role)
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
+   
+    public function getFilm() : string
+    {
+        return $this->film;
+    }
+
+    public function setFilm(string $film)
+    {
+        $this->film = $film;
+        return $this;
+    }
 }
 ?>

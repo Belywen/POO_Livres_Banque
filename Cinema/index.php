@@ -49,6 +49,8 @@
     fin à son empire financier.", $mScorcese, $drame);
     /*acteur : Dicaprio > Jordan Belfort - Margot Robbie > Naomi Lapaglia*/
 
+    $jBelfort = new Role("Jordan Belfort");
+
     $lesInfiltres = new Film("Les Infiltrés", "2006-01-01", 158, "L'histoire de deux hommes qui mènent 
     une double vie : Billy Costigan, un jeune policier sous couverture, et Colin Sullivan, un membre de
      la mafia irlandaise infiltré dans la police. Les deux hommes cherchent à découvrir l'identité de 
@@ -73,10 +75,13 @@
 
     echo "</br>---</br></br>";
     $casting1 = new casting($lDicaprio, $domCom, $inception);
-    var_dump($casting1);
-    
+    $casting2 = new casting($lDicaprio, $jBelfort, $wallStreet);
+    // var_dump($casting1);
 
-    
+    /*Filmographie d'un acteur */
+    echo $lDicaprio->afficherFilmographie();
+
+       
 
     ?>
 </body>

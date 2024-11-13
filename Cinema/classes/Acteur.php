@@ -23,6 +23,21 @@ class Acteur extends Personne {
         $this->castings[] = $casting;
     }
 
+    public function afficherFilmographie() {
+        $result = "<h2>Filmographie de ".$this."</h2></br>";
+
+        foreach($this->castings as $casting) {
+            $result .= $casting->getRole()." dans ".$casting->getFilm()."</br>";
+        }
+
+        return $result;
+    }
+
+    public function __toString()
+    {
+        return parent::__toString();
+    }
+
 
 }
 ?>

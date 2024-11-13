@@ -26,8 +26,7 @@ class Film
         $this->realisateur->addFilm($this); 
         $this->genre = $genre;
         $this->genre->addFilm($this); 
-        $this->castings = [];
-       
+        $this->castings = [];       
     }
 
     public function getTitre(): string

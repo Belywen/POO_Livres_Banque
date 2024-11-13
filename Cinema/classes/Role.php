@@ -1,10 +1,10 @@
 <?php 
 class Role {
-    private string $role;
+    private string $perso;
     private array $castings;
 
-    public function __construct(string $role) {
-        $this->role = $role;
+    public function __construct(string $perso) {
+        $this->perso = $perso;
         $this->castings = [];
     }
 
@@ -13,19 +13,19 @@ class Role {
         $this->castings[] = $casting;
     }
 
-    public function getRole() : string
+    public function getPerso() : string
     {
-        return $this->role;
+        return $this->perso;
     }
 
-    public function setRole(string $role)
+    public function setPerso(string $perso)
     {
-        $this->role = $role;
+        $this->perso = $perso;
         return $this;
     }
 
     public function __toString()  {
-        $this->role;
+        return $this->perso;
     }
 }
 ?>

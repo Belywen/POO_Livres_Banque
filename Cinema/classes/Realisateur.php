@@ -2,10 +2,7 @@
 
 class Realisateur extends Personne
 {
-    protected string $nom;
-    protected string $prenom;
-    protected string $sexe;
-    protected DateTime $dateNaissance;
+    private array $films;
 
     public function __construct(
         string $nom,
@@ -19,13 +16,31 @@ class Realisateur extends Personne
             $sexe,
             $dateNaissance
         );
+        $this->films = [];
+    }
+
+    public function addFilm(Film $film) 
+    {
+        $this->films[] = $film;
     }
 
     public function afficherInfosReal(): string
     {
         $result = $this . "</br> 
-                Sexe : " . $this->getSexe() . "</br>
-                Né le :" . $this->getdateNaissance()->format('d-m-Y');
+                Sexe : " . $this->sexe . "</br>
+                Né le :" . $this->dateNaissance->format('d-m-Y');
         return $result;
     }
+
+    public function afficherFilmParReal() {
+        $result = "<h2>Films réalisés par ". $this." : </h2>";
+
+        foreach($this->films as $film) {
+            $result .= "</br>".$film->getInfosFilms()."</br></br>
+                    Synopsis : ".$film->getSynopsis()."</br>";
+
+        }
+        return $result;
+    }
+
 }

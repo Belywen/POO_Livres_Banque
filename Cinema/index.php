@@ -57,7 +57,7 @@
     /*Afficher infos : real*/    
     echo $cNolan->afficherInfosReal();
 
-    /*Afficher films par real*/
+    /*Afficher films par real + genre*/
     echo "</br>---</br>";
     echo $cNolan->afficherFilmParReal();
 
@@ -66,8 +66,7 @@
     echo "</br>---</br>";
     echo $sF->afficherFilmParGenre();
 
-    /*Afficher infos: film+real+genre*/
-
+    echo "</br>---</br>";
    
 
     

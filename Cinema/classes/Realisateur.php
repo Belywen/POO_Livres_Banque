@@ -36,7 +36,8 @@ class Realisateur extends Personne
         $result = "<h2>Films réalisés par ". $this." : </h2>";
 
         foreach($this->films as $film) {
-            $result .= "</br>".$film->getInfosFilms()."</br></br>
+            $result .= "</br>".$film->getInfosFilms().
+                    " - Type : ".$film->getgenre()."</br></br>
                     Synopsis : ".$film->getSynopsis()."</br>";
 
         }

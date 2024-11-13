@@ -1,43 +1,44 @@
 <?php
 class Genre
 {
-    private string $genre;   
+    private string $type;   
     private array $films;
 
     public function __construct(
-        string $genre,
+        string $type,
     ) {
-        $this->genre = $genre;              
+        $this->type = $type;              
         $this->films = [];
     }
 
-    public function getGenre(): string
+    public function getType(): string
     {
-        return $this->genre;
+        return $this->type;
     }
 
-    public function setGenre(string $genre)
+    public function setType(string $type)
     {
-        $this->genre = $genre;
+        $this->type = $type;
         return $this;
     }
 
-    public function addFilm(Film $film) : array
+    public function addFilm(Film $film)  
     {
         $this->films[] = $film;
     }
 
-    public function afficherFilmParGenre(Film $film) {
+    public function afficherFilmParGenre() : string
+    {
         $result = "<h2>Films de ". $this. "</h2></br>";
         
         foreach($this->films as $film) {
-            $result .= $film->getTitre()."</br>";
+            $result .= $film."</br>";
         }
         return $result;
     }
 
     public function __toString()
     {
-        return $this->genre;
+        return $this->type;
     }
 }

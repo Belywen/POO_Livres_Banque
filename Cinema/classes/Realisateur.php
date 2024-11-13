@@ -19,7 +19,7 @@ class Realisateur extends Personne
         $this->films = [];
     }
 
-    public function addFilm(Film $film) 
+    public function addFilm(Film $film)
     {
         $this->films[] = $film;
     }

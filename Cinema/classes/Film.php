@@ -6,7 +6,7 @@ class Film
     private int $duree;
     private string $synopsis;
     private Realisateur $realisateur;
-    private Film $film;
+    private Genre $genre;
 
     public function __construct(
         string $titre,
@@ -14,7 +14,7 @@ class Film
         int $duree,
         string $synopsis,
         Realisateur $realisateur,
-        Film $film,
+        Genre $genre
     ) {
         $this->titre = $titre;
         $this->dateSortieFr = new DateTime($dateSortieFr);
@@ -89,7 +89,6 @@ class Film
         public function setGenre(string $genre)
     {
             $this->genre = $genre;
-
             return $this;
     }
 
@@ -98,7 +97,6 @@ class Film
                  - Sortie en salle le : ".$this->dateSortieFr->format('d-m-Y');
         return $result;
     }
-
 
     public function __toString()
     {

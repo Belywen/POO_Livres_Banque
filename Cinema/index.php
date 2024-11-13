@@ -17,19 +17,23 @@
     $cNolan = new Realisateur("Nolan", "Christopher", "M", "1970-09-30");
     $mScorcese = new Realisateur("Scorcese", "Martin", "M", "1942-11-17");
 
+    $sF = new Genre("Science-Fiction");
+    $drame = new Genre("Drame");
+    $policier = new Genre("Policier");
+
     $inception = new Film("Inception", "2010-01-01", 148, "Dom Cobb, un voleur talentueux 
     spécialisé dans l'extraction de secrets en infiltrant les rêves des autres. 
     Pour retrouver sa vie et sa famille, il accepte un dernier travail : implanter 
     une idée dans l'esprit d'un héritier, une mission complexe appelée 'inception'. 
     Mais plus ils plongent dans les rêves, plus la frontière entre réalité et illusion 
     devient floue, menaçant la survie de l'équipe.", $cNolan, $sF);
-
     /*acteurs : dicaprio > dom com - cotillard > Mallorie Cobb*/
+
     $theDarkKnight = new Film("The Dark Knight", "2008-01-01", 152, "Batman lutte contre le chaos 
     semé par le Joker, un criminel anarchiste déterminé à plonger Gotham dans le désespoir. Alors 
     que la ville se retrouve menacée par des choix moraux déchirants, Batman doit faire face à son 
     propre sens de la justice. Le film explore les frontières entre le bien et le mal, et la manière 
-    dont une ville et un héros peuvent être façonnés par leurs adversaires.", $cNolan, $sf);
+    dont une ville et un héros peuvent être façonnés par leurs adversaires.", $cNolan, $sF);
     /*Christian bale > Batman - Heath Ledger > Joker*/    
 
     $wallStreet = new Film("Le loup de Wall Street", "2013-01-01", 179, "Jordan Belfort, un courtier 
@@ -48,9 +52,7 @@
      explosive où la trahison et la corruption sont révélées dans un final surprenant.", $mScorcese, $policier);
     /* dicaprio > William « Billy » Costigan - Matt Damon > Colin Sullivan*/
 
-    $sF = new Genre("Science-Fiction");
-    $drame = new Genre("Drame");
-    $policier = new Genre("Policier");
+    
 
     /*Afficher infos : real*/    
     echo $cNolan->afficherInfosReal();
@@ -62,7 +64,7 @@
 
     /*Afficher films par genre*/
     echo "</br>---</br>";
-    echo $sf->afficherFilmParGenre();
+    echo $sF->afficherFilmParGenre();
 
     /*Afficher infos: film+real+genre*/
 
